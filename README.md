@@ -17,6 +17,11 @@ To check code formatting:
 $ flake8
 ```
 
+View documentation on the following endpoints:
+
+- For Swagger UI: http://127.0.0.1:8000/api/docs/
+- For Redoc: http://127.0.0.1:8000/api/redoc/
+
 ## Setup
 - Clone the repository
 - Create a `.env` file in the project root.
