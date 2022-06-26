@@ -52,20 +52,23 @@ Once `pip` has finished downloading the dependencies:
 (venv)$ python manage.py runserver
 ```
 
-### Jump Ahead
+### Authorization and Authentication
+The project uses django rest framework basic authentication and token authentication.
 
-You can create multiple users in your database by running the following command:
-Varal admin, varal users and super admin users will be created but you will still
-need to create your superuser by `createsuperuser` command
-```sh
-python manage.py createbasestart
-```
+To use token authentication, you can attatch the token to the Authorization header
+as:
+
+``Authorization: Token <token_value>``
+
+Authorization example in swagger:
+
+![alt text](/static/img/img.png)
 
 ### Project Structure.
 The project has the following structure with each app having their API configuration
 
 ```tree
-Library/                    <- project root
+PostsAPI/                   <- project directory
 ├── core/                   <- Django root
 │   ├── __init__.py
 │   ├── asgi.py
@@ -74,6 +77,8 @@ Library/                    <- project root
 │   └── wsgi.py
 ├── apps/
 │   └── __init__.py
+├── static/                
+│   └── img/
 ├── manage.py
 ├── README.md
 ├── .env
