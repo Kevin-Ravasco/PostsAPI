@@ -1,6 +1,7 @@
 from django.utils.decorators import method_decorator
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework.generics import CreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
+from rest_framework.views import APIView
 
 from .models import Post
 from .serializers import PostSerializer
@@ -49,5 +50,12 @@ class PostsListAPIView(ListAPIView):
     """
     queryset = Post.objects.all().order_by('-created_at')
     serializer_class = PostSerializer
+
+
+class HandlePostLikeAPIView(APIView):
+
+    def post(self, *args, **kwargs):
+        post_id = kwargs['pk']
+
 
 
