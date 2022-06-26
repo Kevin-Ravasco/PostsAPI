@@ -30,7 +30,7 @@ class RegistrationView(CreateAPIView):
     operation_id='Update User Details', operation_description='Update user information'))
 @method_decorator(name='delete', decorator=swagger_auto_schema(
     operation_id='Delete User', operation_description='Delete user'))
-class UpdateRetrieveDeleteUserView(RetrieveUpdateDestroyAPIView):
+class UpdateRetrieveDeleteUserAPIView(RetrieveUpdateDestroyAPIView):
     """
     Endpoint to get user details, to update user details and to
     delete the user
