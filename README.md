@@ -11,12 +11,6 @@ Technologies used:
 - Postgres
 - Swagger and Redoc for Documentation
 
-The project has observed python's PEP8 rules and standards. 
-To check code formatting:
-```sh
-$ flake8
-```
-
 View documentation on the following endpoints:
 
 - For Swagger UI: http://127.0.0.1:8000/api/docs/
@@ -32,7 +26,7 @@ View documentation on the following endpoints:
 
 Create a virtual environment to install dependencies in and activate it:
 
-```sh
+```shell
 $ pip install virtualenv
 $ virtualenv venv
 $ venv/bin/activate
@@ -40,14 +34,14 @@ $ venv/bin/activate
 
 Then install the dependencies:
 
-```sh
+```shell
 (venv)$ pip install -r requirements.txt
 ```
 Note the `(venv)` in front of the prompt. This indicates that this terminal
 session operates in a virtual environment.
 
 Once `pip` has finished downloading the dependencies:
-```sh
+```shell
 (venv)$ cd PostsAPI
 (venv)$ python manage.py runserver
 ```
@@ -92,9 +86,15 @@ PostsAPI/                   <- project directory
 
 - Run tests using coverage:
 ```shell
-$ coverage run --source='.' manage.py test
+coverage run --source='.' manage.py test
 ```
 - To check test coverage:
 ```shell
-$ coverage html
+coverage html
+```
+
+The project has observed python's PEP8 rules and standards. 
+To check code formatting issues:
+```shell
+flake8
 ```
