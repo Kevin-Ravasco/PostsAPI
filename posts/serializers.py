@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from rest_framework.exceptions import PermissionDenied
 
 from .models import Post
 
@@ -55,8 +56,8 @@ class PostSerializer(serializers.ModelSerializer):
         logged_in_user = self.context['request'].user
         like_action = validated_data.get('like_action', None)
         if not logged_in_user == instance.created_by:
-            raise serializers.ValidationError(detail={'error': 'You are not allowed to update this post'},
-                                              code='invalid owner')
+            raise PermissionDenied(detail={'error': 'You are not allowed to update this post'},
+                                   code='invalid owner')
 
         instance = super(PostSerializer, self).update(instance, validated_data)
 
