@@ -50,6 +50,11 @@ class TestUpdateRetrieveDeleteUserAPIView(TestSetup):
         self.url = reverse('accounts:user_details', kwargs={'id': self.user_id})
         self.client.login(**self.user_1_credentials)
 
+    def test_authentication_required(self):
+        self.client.logout()
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, 401)
+
     def test_retrieve_existing_user(self):
         response = self.client.get(self.url)
         self.assertEquals(response.status_code, 200)
