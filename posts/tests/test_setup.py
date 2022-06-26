@@ -26,6 +26,6 @@ class TestSetup(APITestCase):
         cls.user_2.save()
 
         # Create post objects for user 1
-        for i in xrange(5):
+        for i in xrange(25):
             Post.objects.create(title=f'Some title {i}', content='some content', created_by=cls.user_1)
         return
