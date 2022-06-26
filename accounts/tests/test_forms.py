@@ -64,4 +64,3 @@ class TestRegistrationForm(TestCase):
         data = {'email': '', 'password1': 'password1', 'password2': 'password2'}
         form = RegistrationForm(data)
         self.assertFalse(form.is_valid())
-

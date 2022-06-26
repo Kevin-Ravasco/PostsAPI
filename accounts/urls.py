@@ -9,6 +9,6 @@ urlpatterns = [
     path('user/<int:id>/', views.UpdateRetrieveDeleteUserAPIView.as_view(), name='user_details'),
     path('register/', views.RegistrationView.as_view(), name='register'),
     path('login/', swagger_auto_schema(method='post', operation_id='Login User',
-                                       operation_description='Login User')(obtain_auth_token)
-         , name='login'),
+                                       operation_description='Login User')(obtain_auth_token),
+         name='login'),
 ]
