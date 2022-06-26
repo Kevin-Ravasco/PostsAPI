@@ -13,7 +13,7 @@ class Post(models.Model):
     likes = ArrayField(base_field=models.PositiveIntegerField(), default=list, db_index=True)
 
     def __str__(self):
-        return f'Post by {self.created_by}'
+        return self.title
 
     @property
     def likes_count(self):
