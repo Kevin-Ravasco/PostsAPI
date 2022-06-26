@@ -98,3 +98,8 @@ To check code formatting issues:
 ```shell
 flake8
 ```
+
+### Extension
+I decided to keep the project simple but there are a few things that
+can be done:
+- Extend the user to have a profile model
