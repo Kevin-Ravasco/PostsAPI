@@ -31,7 +31,6 @@ class UpdateRetrieveDeletePostAPIView(RetrieveUpdateDestroyAPIView):
     Endpoint to retrieve, update and delete a post
 
     url: api/posts/details/
-    params: like=True
     """
     queryset = Post.objects.all()
     serializer_class = PostSerializer

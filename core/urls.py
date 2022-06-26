@@ -9,7 +9,10 @@ schema_view = get_schema_view(
         title="Posts API",
         default_version='v1',
         description="API endpoints for the posts project. Find all information related to the routes included in the"
-                    "project under this document",
+                    "project under this document."
+        "\n\nThe `swagger-ui` view can be found [here](/api/docs/)."
+        "\n\nThe `ReDoc` view can be found [here](/api/redoc/)."
+        ,
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="okevin182@gmail.com"),
         license=openapi.License(name="BSD License"),
