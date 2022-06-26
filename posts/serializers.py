@@ -28,13 +28,6 @@ class PostSerializer(serializers.ModelSerializer):
             'created_by': {'read_only': True}
         }
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        # remove the like_action field on the docs create view
-        if not self.instance:
-            self.fields.pop('like_action')
-
     def to_representation(self, instance):
         user_id = self.context['request'].user.id
         data = super(PostSerializer, self).to_representation(instance)
